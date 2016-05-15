@@ -565,7 +565,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "SuperGroup settings:\nLock links : "..settings.lock_link.."\nLock flood: "..settings.flood.."\nFlood sensitivity : "..NUM_MSG_MAX.."\nLock spam: "..settings.lock_spam.."\nLock Arabic: "..settings.lock_arabic.."\nLock Member: "..settings.lock_member.."\nLock RTL: "..settings.lock_rtl.."\nLock Tgservice : "..settings.lock_tgservice.."\nLock sticker: "..settings.lock_sticker.."\nPublic: "..settings.public.."\nStrict settings: "..settings.strict
+  local text = "☢ تنظیمات سوپر گروه:\n⭕️ قفل لینک : "..settings.lock_link.."\n⭕️ قفل فلود: "..settings.flood.."\n⭕️ حساسیت فلود : "..NUM_MSG_MAX.."\n⭕️ قفل اسپم: "..settings.lock_spam.."\n⭕️ قفل عربی: "..settings.lock_arabic.."\n⭕️ قفل ممبر: "..settings.lock_member.."\n⭕️ قفل RTL: "..settings.lock_rtl.."\n⭕️ قفل اعلانات گروه : "..settings.lock_tgservice.."\n⭕️ قفل استیکر: "..settings.lock_sticker.."\n⭕️ همگانی: "..settings.public.."\n⭕️ تنظیمات سخت گیرانه: "..settings.strict
   return text
 end
 
@@ -1310,7 +1310,7 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'link' then
+		if matches[1] == 'لینک' then
 			if not is_momod(msg) then
 				return
 			end
@@ -1319,7 +1319,7 @@ local function run(msg, matches)
 				return "Create a link using /newlink first!\n\nOr if I am not creator use /setlink to set your link"
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-			return "Group link:\n"..group_link
+			return "> لینک گروه ["..msg.to.print_name.."]\n〰〰〰〰〰〰〰〰〰〰〰〰"..group_link
 		end
 
 		if matches[1] == "invite" and is_sudo(msg) then
@@ -2050,7 +2050,7 @@ return {
 	"^[#!/]([Kk]ick) (.*)$",
 	"^[#!/]([Nn]ewlink)$",
 	"^[#!/]([Ss]etlink)$",
-	"^[#!/]([Ll]ink)$",
+	"^(لینک)$",
 	"^[#!/]([Rr]es) (.*)$",
 	"^[#!/]([Ss]etadmin) (.*)$",
 	"^[#!/]([Ss]etadmin)",
